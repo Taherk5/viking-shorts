@@ -1,0 +1,10 @@
+# never commit secrets, models or build output
+*.wav
+*.onnx
+*.bin
+client_secret*.json
+.youtube_uploader_channels_cache
+youtube_uploader_mcp.log
+tools/youtube-uploader-mcp/youtube-uploader-mcp-linux-amd64
+frames/
+*.zip
