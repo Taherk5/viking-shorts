@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body><canvas id="cv"></canvas>
+<script src="lib.js"></script><script src="chars.js"></script><script src="world.js"></script><script src="style2.js"></script>
+<script>
+const PW = 720, PH = 1280;
+const cv = document.getElementById('cv'); cv.width = PW * S; cv.height = PH * S;
+const g = cv.getContext('2d'); g.scale(S, S);
+window.draw = function (t) {
+  g.clearRect(0, 0, PW, PH);
+  bgFjord(g, PW, PH, t);
+  // boy (left), looking up at his father
+  g.save(); g.translate(150, 925); g.scale(1.3, 1.3); char2(g, { dir: 1, kind: 'boy', mood: 'worry', look: [5, -5], t }); g.restore();
+  // father (right, in front), stern
+  g.save(); g.translate(566, 860); g.scale(1.72, 1.72); char2(g, { dir: -1, kind: 'father', mood: 'stern', look: [4, 4], t }); g.restore();
+  // thought bubble (the memory), like the reference
+  insetBubble(g, 510, 372, 128, (gg, w) => ship2(gg, w), [[470, 514, 15], [450, 548, 10], [438, 572, 6]]);
+  // hook text
+  comicText(g, 'His father', PW / 2, 118, 86, '#fff', { shadow: 0, stroke: 14, strokeColor: SK.line, weight: 900 });
+  comicText(g, 'killed a man.', PW / 2, 206, 86, '#ffe27a', { shadow: 0, stroke: 14, strokeColor: SK.line, weight: 900 });
+  // caption
+  g.font = '800 40px Inter'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.lineJoin = 'round';
+  g.lineWidth = 11; g.strokeStyle = SK.line; g.strokeText('So the whole family', PW / 2, 1000); g.strokeText('was banished.', PW / 2, 1052);
+  g.fillStyle = '#fff'; g.fillText('So the whole family', PW / 2, 1000); g.fillText('was banished.', PW / 2, 1052);
+  // soft paper grain + vignette
+  g.save(); g.globalCompositeOperation = 'overlay'; g.globalAlpha = 0.14; const gt = grainTile(); for (let y = 0; y < PH; y += 256) for (let x = 0; x < PW; x += 256) g.drawImage(gt, x, y, 256, 256); g.restore();
+  const gr = g.createRadialGradient(PW / 2, PH / 2, PH * 0.4, PW / 2, PH / 2, PH * 0.78); gr.addColorStop(0, 'rgba(40,20,10,0)'); gr.addColorStop(1, 'rgba(40,20,10,0.35)'); g.fillStyle = gr; g.fillRect(0, 0, PW, PH);
+};
+window.shot = () => cv.toDataURL('image/png');
+</script></body></html>
