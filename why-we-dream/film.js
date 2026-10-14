@@ -480,13 +480,6 @@ function sEnd(ctx, t, u, ls) {
   if (qk > 0.02) extruded(ctx, '?', CX + 190, 840, 250, C.yellow, C.yellowDk, 10, qk, Math.sin(t * 3) * 0.08);
   const wave = t > 42.5 ? Math.sin(t * 8) * 18 : 0;
   brainy(ctx, CX - 20, 1290, 1.0, { mood: 'happy', look: [0.2, -0.5], blink: blinkAt(t, 11), rot: Math.sin(t * 1.6) * 0.05, armR: t > 42.5 ? 140 + wave : undefined, sq: [1, 1 + 0.025 * pulse(u)], breath: Math.sin(t * 2), t });
-  const ek = sp(t, Ln(10).end + 0.45, SPRING.bouncy);
-  if (ek > 0.01) {
-    ctx.save(); ctx.translate(CX, 1392); ctx.scale(ek, ek);
-    ctx.font = font(42, 800, UI); ctx.letterSpacing = '3px'; const w = 640;
-    pill(ctx, -w / 2, -42, w, 84); ctx.fillStyle = C.yellow; ctx.fill(); ctx.fillStyle = C.ink; ctx.textAlign = 'center'; ctx.fillText('TELL ME IN THE COMMENTS', 2, 15);
-    ctx.letterSpacing = '0px'; ctx.restore();
-  }
 }
 
 // ------------------------------------------------------------------ captions: three words at a time, current word gold
@@ -551,7 +544,7 @@ const HITS = [
   [bt(Wd(7, 0)), 'idea 4 chip', 'pop', { pitch: 'F#5' }], [bt(Wd(7, 11) + 2.0), 'static becomes a story', 'bell', { pitch: 'F#6' }],
   [bt(Wd(8, 0)), 'REM chip', 'pop', { pitch: 'F#5' }], [bt(Wd(8, 4)), 'lock', 'thud', { pitch: 'C3', to: 'G2', gain: 0.5 }],
   [bt(Wd(9, 3)), 'GONE', 'swell', {}], [bt(Wd(9, 6)), 'alarm', 'blip', { pitch: 'B5' }],
-  [bt(Wd(10, 1)), 'question text', 'pop', { pitch: 'A5' }], [bt(Ln(10).end + 0.45), 'end pill', 'bell', { pitch: 'D6' }],
+  [bt(Wd(10, 1)), 'question text', 'pop', { pitch: 'A5' }],
 ].sort((a, b) => a[0] - b[0]);
 
 // ------------------------------------------------------------------ film
