@@ -87,23 +87,12 @@ bed *= 10 ** (-3 / 20) / (np.abs(bed).max() + 1e-9)
 sf.write(HERE / "music.wav", bed.T, SR, subtype="PCM_24")
 
 # ------------------------------------------------------------------ beat grid (measured on the lub stem)
-# librosa's tracker lands 424 ms late on a stem that is only soft sub-kicks, so measure the attacks directly:
-# in each beat window, the time the lub's smoothed envelope first reaches half its peak.
-stem = np.abs(grid_bus.x[:, :N].mean(axis=0))
-sm = np.convolve(stem, np.ones(int(0.002 * SR)) / int(0.002 * SR), mode="same")
-rises = []
-for b in range(NB):
-    a0, a1 = int(b * BEAT * SR), int((b + 0.6) * BEAT * SR)
-    w = sm[a0:a1]
-    rises.append((a0 + int(np.argmax(w > 0.5 * w.max()))) / SR - b * BEAT)
-offset = float(np.median(rises))
-grid = {"bpm": BPM, "period": BEAT, "offset": round(float(offset), 5),
-        "beats": [round(offset + BEAT * i, 5) for i in range(NB + 1)], "fit_residual_ms": round(float(np.std(rises)) * 1000, 2), "fit_inliers": NB}
+grid = measure_beats(grid_bus.x[:, :N].mean(axis=0).astype(np.float32), SR, BPM, n_beats=NB + 1)
 grid.update({"designed_bpm": BPM, "downbeats": grid["beats"][::4],
              "sections": [{"name": "hook", "beat": 0}, {"name": "theories", "beat": 8}, {"name": "twist", "beat": 45}, {"name": "end", "beat": 53}],
-             "source": "why-we-dream/audio/score.py: sleeping-heartbeat stem, attack-flux phase fit at the designed period"})
+             "source": "why-we-dream/audio/score.py: sleeping-heartbeat stem, librosa beat_track + onsets, linear fit"})
 (FILM / "beats.json").write_text(json.dumps(grid, indent=1))
-print(f"beats: {grid['bpm']} bpm, offset {grid['offset'] * 1000:.1f} ms (kick attack ~3-9 ms after the nominal beat)")
+print(f"beats: {grid['bpm']} bpm, offset {grid['offset'] * 1000:.1f} ms, {grid['fit_inliers']}/{len(grid['detected'])} inliers, rms {grid['fit_residual_ms']} ms")
 
 # ------------------------------------------------------------------ voice-over on the grid
 lines = json.loads((HERE / "vo_lines.json").read_text())
