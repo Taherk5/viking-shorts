@@ -1,0 +1,42 @@
+[
+ {
+  "id": "l1",
+  "text": "Why can't you tickle yourself?",
+  "speed": 1.05
+ },
+ {
+  "id": "l2",
+  "text": "Because your brain sees it coming.",
+  "speed": 1.05
+ },
+ {
+  "id": "l3",
+  "text": "Every time you move, your brain predicts what that movement will feel like.",
+  "speed": 1.05
+ },
+ {
+  "id": "l4",
+  "text": "A part called the cerebellum sends out that prediction, and the feeling gets turned down.",
+  "speed": 1.05
+ },
+ {
+  "id": "l5",
+  "text": "Tickling needs surprise. If the touch is predicted, there's no surprise.",
+  "speed": 1.05
+ },
+ {
+  "id": "l6",
+  "text": "Scientists tested this with a tickle robot. When people moved it themselves, it barely tickled.",
+  "speed": 1.05
+ },
+ {
+  "id": "l7",
+  "text": "But add a tiny delay, a fraction of a second, and it started to tickle more.",
+  "speed": 1.05
+ },
+ {
+  "id": "l8",
+  "text": "So try it right now. Nothing, right?",
+  "speed": 1.05
+ }
+]

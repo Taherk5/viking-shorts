@@ -1,0 +1,52 @@
+[
+ {
+  "id": "l1",
+  "text": "Why is the ocean salty, but rivers aren't?",
+  "speed": 1.05
+ },
+ {
+  "id": "l2",
+  "text": "It starts with rain.",
+  "speed": 1.05
+ },
+ {
+  "id": "l3",
+  "text": "Rainwater is slightly acidic, so over time, it slowly breaks down rocks on land.",
+  "speed": 1.05
+ },
+ {
+  "id": "l4",
+  "text": "That frees tiny amounts of minerals, and rivers carry them to the sea.",
+  "speed": 1.05
+ },
+ {
+  "id": "l5",
+  "text": "Rivers taste fresh because the amounts are tiny. But the ocean collects them.",
+  "speed": 1.05
+ },
+ {
+  "id": "l6",
+  "text": "The sun evaporates the water, the salt stays behind, and over millions of years, it added up.",
+  "speed": 1.05
+ },
+ {
+  "id": "l7",
+  "text": "Vents on the seafloor add even more minerals from inside the Earth.",
+  "speed": 1.05
+ },
+ {
+  "id": "l8",
+  "text": "Today, every liter of seawater holds about thirty-five grams of salt.",
+  "speed": 1.05
+ },
+ {
+  "id": "l9",
+  "text": "Spread over all the land, that salt would make a layer as tall as a forty-story building.",
+  "speed": 1.05
+ },
+ {
+  "id": "l10",
+  "text": "Would you have guessed that much?",
+  "speed": 1.05
+ }
+]
