@@ -8,3 +8,5 @@ youtube_uploader_mcp.log
 tools/youtube-uploader-mcp/youtube-uploader-mcp-linux-amd64
 frames/
 *.zip
+node_modules/
+out/

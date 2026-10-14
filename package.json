@@ -1,0 +1,1 @@
+{ "name": "viking-shorts", "private": true, "devDependencies": { "playwright": "1.56.1" } }

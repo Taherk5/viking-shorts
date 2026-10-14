@@ -1,0 +1,32 @@
+# Why do we dream?: shot list
+48.0 s · 75 bpm (0.8 s/beat) · 60 beats · format: 9x16 only (YouTube Short, 1080×1920, 60 fps)
+Music: bespoke, `audio/score.py` (D major pads, slow "sleeping" heartbeat on every beat, sparse bells) · VO: `audio/vo_lines.json`, Kokoro `af_heart`, 10 lines, each starting on a half-beat
+
+## Look (the "style guide")
+- **Night, not cartoon.** Deep midnight gradient (`#05061A` → `#14143F`), three star layers with slow parallax, soft glow (additive light), film grain. No characters, no outlines: light, particles and type.
+- **One accent: warm gold `#FFC66B`.** Everything else is night-blue and warm white `#F4EFE6`. Gold = what the brain is "doing" (memories, signals, the thing to notice).
+- **Type:** Display = Instrument Serif (italic for the big words), UI = Inter (tiny labels, numbers). Captions: big serif, 3-4 words at a time, current word gold.
+- **One idea holds the whole film together: the dream orb.** A glowing sphere floats above a sleeping silhouette. Each theory plays *inside* the orb, and the heartbeat of the score pulses it on every beat. The hook's stars (the "6") become the question mark, which becomes the orb's rim: the same particles all the way through.
+- **Layout (9:16, safe area x 72-930, y 250-1490):** theory label y 280-420 · orb centre (520, 760), r 330 · sleeper y 1110-1260 · captions y 1310-1470.
+
+## Shots
+t = 0.003 + beat × 0.8. VO times are from `assets/vo_timing.json`.
+
+| # | beats | time | shot | on screen | motion | out (what carries) | sound |
+|---|-------|------|------|-----------|--------|--------------------|-------|
+| 1 | 0-4 | 0.0-3.2 | **Hook: "6 YEARS"** | Frame 0 is already a huge gold numeral **6** drawn in ~260 stars (constellation lines between neighbours) on the night sky, "YEARS" under it in small Inter caps, caption "You'll spend about six years of your life dreaming." (VO 0.4-2.7) | Slow push-in on the stars; they twinkle and the whole 6 pulses on each heartbeat. At "dreaming" (~2.1 s) the stars start to drift loose | the same stars fly to form the "?" | soft sub hit @0, shimmer riser ending @4 |
+| 2 | 4-8 | 3.2-6.4 | **The question** | A big gold **?** built from the same stars; "And scientists still can't fully explain why." (VO 3.2-5.8). At beat 6.5 the "?" collapses inward and its dot grows into the **orb**; sleeper silhouette and rising dream-bubbles fade up beneath it | Stars spring from 6 to ? (bouncy), ? breathes with the heartbeat; then camera pulls back as the ? shrinks into a ring of stars (the orb rim) | star ring = orb rim | bell @4, whoosh @7 |
+| 3 | 8-15.5 | 6.4-12.4 | **Idea 1: MEMORY** | Label "01 / *Memory*" drops in at "memory" (VO 6.4). In the orb a day streams past as gold sparks on a sun-to-moon arc; at "replays your day" it plays back fast, at "files away what matters" the bright sparks slide into a grid of glowing cells on the right and the dim ones fade | Label springs up; sparks follow a curve, filtered through a thin gold line | an iris closes on the orb and re-opens on the maze | pop @8, ticks as each spark is filed, bell on the last one |
+| 4 | 15.5-21 | 12.4-16.8 | **Proof: rats** | Chip "RATS · ASLEEP". A glowing line-art maze in the orb; a gold dot runs its route, then a pale ghost dot replays the *same* route at 4× (VO "replay their maze runs in their sleep") | Dot traces the path with a fading trail; ghost laps it twice | label slides away | whoosh @15.5, soft tick per corner |
+| 5 | 21-29 | 16.8-23.2 | **Idea 2: EMOTION** | Label "02 / *Emotion*". In the orb a jagged, shaking gold waveform; at "overnight therapy" it calms into a slow pale-blue sine and the orb rim cools from warm to blue | Waveform jitter decays (spring), amplitude and speed fall to a calm sine | wave flattens into a horizon line = the floor of the next grid | pop @21, a low-pass "exhale" sweep @26 |
+| 6 | 29-38 | 23.2-30.4 | **Idea 3: PRACTICE** | Label "03 / *Practice*", chip "THREAT SIMULATOR". Wireframe floor in perspective; a gold runner-dot is chased by a looming dark circle with a gold rim, dodges two blocks, three attempts in a row: each one a little cleaner (counter "RUN 1 · 2 · 3") | Camera tilts down onto the grid; the runner leaps with a small squash; the chaser shakes the frame once | the chaser shrinks into a single dot of static | pop @29, thud on each near miss, bell on RUN 3 |
+| 7 | 38-45.5 | 30.4-36.4 | **Idea 4: NOISE** | Label "04 / *Noise*". Hundreds of tiny dots flicker like TV static; at "turns into a story" they pull together into a doorway with light spilling onto a few steps | Static jitters (seeded), then springs into the door shape; light cone sweeps in | the doorway light opens to white-gold and falls back | pop @38, static crackle fading into a bell @43 |
+| 8 | 45.5-50 | 36.4-40.0 | **Paralysis** | Orb shrinks and dims, camera drops to the sleeper. A gold signal pulse runs from head to a gap at the neck and stops dead ("BODY: OFF"); above, a wild dot still sprints in the orb. Caption: "Meanwhile, your body is paralyzed, so you can't act it out." | Pulse travels, hits the gap with a small shake, the body stays perfectly still while the orb is busy | sky warms | thud @45.5, hard stop @48 |
+| 9 | 50-53.5 | 40.0-42.8 | **Gone** | Dawn: the sky turns gold-rose from the horizon up, stars fade, and the orb comes apart into dust that drifts upward. The word *gone* in big serif. "Most dreams are gone within minutes of waking." | Orb disintegrates upward (particles); light rises behind the sleeper | dust settles into the dark again | riser to @50, airy shimmer @52 |
+| 10 | 53.5-60 | 42.8-48.0 | **Closing question + end card** | Back to deep night, one small glowing orb. VO "So, do you remember your last one?" (42.8-44.7) as big serif words, then the end card holds 3.3 s: *Do you remember your last dream?* with "Tell me in the comments" and "Follow for more answers" | Words land one by one with the voice; the orb brightens once; final slow push-out and fade-out of the music | end of film | impact @53.5, bell @56 on the last word, music resolves on D |
+
+Longest gap without a new event: beats 21-24 (2.4 s) while the waveform builds, which still moves continuously. Every other gap is under 2 s.
+
+Formats: only 9x16 is built. Captions sit just above the bottom safe margin so the YouTube UI never covers them.
+
+Checks I will run before showing the film: contact sheet + phone sheets per round (3 rounds minimum, scores ≥ 8 for hook, readability at phone size, motion quality, variety, sync), `--hits` sync report, ffprobe on the final.
